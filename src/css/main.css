@@ -1,10 +1,165 @@
-#banner, #navbar{
+.custom-navbar {
     background-color: #2c067d;
-    color: rgb(255, 255, 255)!important
-    
-    }
+}
 
-    section{
-        background-color: white;
-    
-    }
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+    color: #ffffff;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #2c067d;
+}
+
+.custom-navbar .btn-secondary {
+    background-color: #694ced;
+    border-color: #e2d9df;
+}
+
+.custom-navbar .btn-outline-secondary {
+    color: hsl(330, 11%, 93%);
+    border-color: #ffffff;
+}
+
+.custom-navbar .btn-outline-secondary:hover {
+    background-color: #461d3a;
+    color: #f6f3f3;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+    font-weight: 700;
+}
+
+.custom-navbar .btn {
+    font-weight: 400;
+}
+
+.custom-navbar .navbar-brand {
+    font-weight: 700;
+}
+
+.custom-navbar .nav-link {
+    font-weight: 600;
+}
+
+/*Estilo Banner*/
+#banner {
+    background-color: #ffffff;
+}
+
+#banner h1,
+#banner p {
+    color: #23041a;
+}
+
+#banner .btn {
+    background-color: #461d3a;
+    color: #fff;
+    border: none;
+}
+
+#banner .btn:hover {
+    background-color: #ffffff;
+}
+
+section {
+    border-bottom: 8px solid #ffffff;
+}
+
+#course-units {
+    background-color: #2c067d;
+}
+
+#course-units h2 {
+    font-size: 48px;
+    color: #f8f8f8;
+}
+
+#course-units .texto-beneficios{
+    max-width: 1100px; 
+    margin: 0 auto;
+    margin-top: -25px;  
+    padding-top: 0;
+    text-align: center;      
+    padding: 20px;
+    color:#ffffff;
+}
+
+#course-units .bg-light {
+    font-size: 16px;
+    background-color: #ffffff !important;
+}
+
+#course-units h5 {
+    color: #2c067d;
+    font-weight: 700;
+}
+
+#course-units p {
+    color: #2c067d;
+}
+
+#github {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#github h2 {
+    font-size: 48px;
+    color: #2c067d;
+   
+}
+
+#github p {
+    font-size: 24px;
+    color: #2c067d;
+}
+
+#github .btn {
+    background-color: #2c067d;
+    color: #ffffff;
+    border: none;
+}
+
+#github .btn:hover {
+    background-color: #2c067d;
+}
+
+#teacher-support {
+    background-color: #2c067d;
+}
+
+#teacher-support h2 {
+    font-size: 38px;
+    color: #f1edf0;
+}
+
+#teacher-support p {
+    font-size: 24px;
+    color: #fefefe;
+}
+
+#forum {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#forum h2 {
+    font-size: 48px;
+   color: #2c067d;
+}
+
+#forum p {
+    font-size: 24px;
+    color: #2c067d;
+}
+#forum .btn {
+    background-color: #2c067d;
+    color: #ffffff;
+    border: none;
+}
+
+#forum .btn:hover {
+    background-color: #2c067d;
+}

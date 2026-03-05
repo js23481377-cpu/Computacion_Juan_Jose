@@ -1,0 +1,91 @@
+
+/*Estilo NavBar*/
+.custom-navbar {
+    background-color: #2c067d;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+    color: #ffffff;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #ffffff;
+}
+
+.custom-navbar .btn-secondary {
+     background-color: #694ced;
+    border-color: #e2d9df;
+}
+
+.custom-navbar .btn-outline-secondary {
+    color: hsl(330, 11%, 93%);
+    border-color: #ffffff;
+}
+
+.custom-navbar .btn-outline-secondary:hover {
+    background-color: #461d3a;
+    color: #f6f3f3;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+    font-weight: 700;
+}
+
+.custom-navbar .btn {
+    font-weight: 400;
+}
+
+.custom-navbar .navbar-brand {
+    font-weight: 700;
+}
+
+.custom-navbar .nav-link {
+    font-weight: 600;
+}
+
+/* Fondo general */
+body {
+    background-color: #ebceff;
+}
+
+/* Título principal */
+.titulo-galeria {
+    font-size: 48px;
+    color: #2c067d;
+    font-weight: bold;
+}
+
+/* Cards */
+.custom-card {
+    background-color: #8963dc;
+    border-block-color: #2c067d;;
+    border-radius: 10px;
+    text-align: center; /* Centra todo el texto */
+}
+
+/* Espacio para imagen */
+.image-placeholder {
+    height: 180px;
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Títulos dentro de las cards */
+.titulo-card {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Botón personalizado */
+.btn-custom {
+    background-color: #2c067d;
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #5e1f3e;
+}
