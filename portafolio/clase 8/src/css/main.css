@@ -337,21 +337,21 @@ model-viewer {
 @media (max-width: 650px) {
     .st {
         /* Esto escala TODO el logo para que quepa en el ancho del celular */
-        transform: scale(0.5); 
+        transform: scale(0.7); 
         transform-origin: center top;
-        margin-bottom: -150px; /* Evita que el modelo 3D suba demasiado */
+        margin-bottom: -110px; /* Evita que el modelo 3D suba demasiado */
         margin-top: 1rem;
     }
 
     model-viewer {
         /* Bajamos el modelo para que no tape el título en celulares */
-        margin-top: 2rem !important; 
+        margin-top: 1rem !important; 
         height: 50vh;
     }
 }
 
 /* Ajuste extra para pantallas muy pequeñas (iPhone SE, etc) */
-@media (max-width: 380px) {
+@media (max-width: 390px) {
     .st {
         transform: scale(0.4);
         margin-bottom: -180px;
