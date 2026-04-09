@@ -314,7 +314,7 @@ model-viewer {
 
 /* --- ESTILOS PARA LA NAVBAR --- */
 .custom-navbar {
-    background-color: #2b0071 !important; 
+    background-color: #2b0071 !important; /* El color morado oscuro de la foto */
     padding: 0.5rem 1rem;
 }
 
@@ -333,72 +333,70 @@ model-viewer {
     background-color: #5d3fd3 !important; /* Morado del botón Sign Up */
     border: none;
 }
-/* ==================================================
-   --- ARREGLO DEFINITIVO PARA MÓVILES ---
-   ================================================== */
+/* --- ARREGLO PARA MÓVILES (Reemplaza tu sección @media anterior) --- */
 
 @media (max-width: 650px) {
-    /* 1. Preparamos el cuerpo para centrar */
+    /* Ajustes generales del cuerpo para móviles */
     body {
-        overflow-x: hidden; /* Evita el desplazamiento lateral */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centra todo horizontalmente */
-        width: 100vw;
+        /* Aseguramos que nada se corte lateralmente */
+        overflow-x: hidden;
     }
 
-    /* 2. EL CAMBIO CLAVE: Contenedor del Título */
+    /* 1. Ajuste del Contenedor del Título */
     .st {
-        /* Centrado absoluto y limpio usando Flexbox en el padre (body) */
-        position: relative;
-        left: 0; /* Reseteamos el left que intentamos antes */
-        
-        /* Centrado con márgenes automático */
-        margin-left: auto !important;
-        margin-right: auto !important;
+        /* Encogemos el logo al 50% */
+        transform: scale(0.5); 
+        transform-origin: center top;
 
-        /* Escalado desde el centro */
-        transform: scale(0.4) !important; /* Más pequeño para asegurar que quepa */
-        transform-origin: center top; /* Escalamos desde el centro superior */
+        /* --- LA CLAVE --- */
+        /* Reducimos drásticamente la altura para eliminar el espacio vacío inferior 
+           que empuja el modelo hacia abajo. */
+        height: 120px !important; 
 
-        /* Altura y Espaciado para que el modelo suba */
-        height: 100px !important; /* Altura muy baja para recortar el espacio vacío */
-        margin-top: -1rem !important; /* Subimos el logo un poco */
+        /* Margen negativo para subir un poco el logo y que no quede mucho espacio arriba */
+        margin-top: -1rem !important;
         
-        /* Aseguramos que nada se corte */
+        /* Aseguramos que nada de este bloque se corte visualmente */
         overflow: visible !important;
-        width: 625px; /* Mantenemos su ancho original para que el scale funcione bien */
     }
 
-    /* 3. Ajuste de 'Things' para que no se separe */
-    .st-bottom {
-        top: -3.5rem !important; /* Juntamos 'Things' a 'Stranger' */
-        position: relative;
+    /* 2. Ajuste fino de la palabra 'Things' y líneas en móviles */
+    .st-things-t {
+        /* Hacemos 'Things' un poquito más pequeño para que encaje mejor con las líneas */
+        font-size: 90% !important;
+        letter-spacing: 1px !important;
     }
     
-    .st-things-t {
-        letter-spacing: 1px !important; /* Reducimos el espaciado entre letras */
+    .st-bound-mini {
+        /* Subimos un poquito las líneas cortas para que toquen 'Things' */
+        top: -0.2rem !important;
     }
 
-    /* 4. Ajuste del Modelo 3D */
+    /* 3. Ajuste del Modelo 3D */
     model-viewer {
-        /* Subimos el modelo para que quede justo debajo del letrero */
-        margin-top: -5rem !important; /* Este valor sube el modelo. Ajusta si queda muy encima */
-        height: 60vh !important;
+        /* Mantenemos el margen negativo original o lo ajustamos según prefieras.
+           -8rem o -6rem debería funcionar bien ahora que .st tiene menos altura. */
+        margin-top: -6rem !important; 
+        
+        /* Ajustamos la altura del modelo en móvil para que quepa todo */
+        height: 55vh !important; 
         width: 100vw !important;
-        z-index: 1;
     }
 }
 
 /* Ajuste extra para pantallas muy pequeñas (iPhone SE, etc) */
 @media (max-width: 380px) {
     .st {
-        transform: scale(0.35) !important; /* Aún más pequeño */
-        height: 80px !important;
+        /* Escalamos un poco más para pantallas muy estrechas */
+        transform: scale(0.42);
+        
+        /* Ajustamos la altura y márgenes proporcionales */
+        height: 100px !important;
         margin-top: -1.5rem !important;
     }
     
     model-viewer {
-        margin-top: -6rem !important;
+        /* Subimos el modelo un poco más */
+        margin-top: -6.5rem !important;
     }
 }
