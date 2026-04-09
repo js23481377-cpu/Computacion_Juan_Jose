@@ -333,36 +333,72 @@ model-viewer {
     background-color: #5d3fd3 !important; /* Morado del botón Sign Up */
     border: none;
 }
-/* --- ARREGLO PARA MÓVILES --- */
+/* ==================================================
+   --- ARREGLO DEFINITIVO PARA MÓVILES ---
+   ================================================== */
+
 @media (max-width: 650px) {
+    /* 1. Preparamos el cuerpo para centrar */
+    body {
+        overflow-x: hidden; /* Evita el desplazamiento lateral */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra todo horizontalmente */
+        width: 100vw;
+    }
+
+    /* 2. EL CAMBIO CLAVE: Contenedor del Título */
     .st {
-        /* 1. Centrado y Escalado */
+        /* Centrado absoluto y limpio usando Flexbox en el padre (body) */
         position: relative;
-        left: 50%;
-        /* Escalamos y centramos en una sola línea */
-        transform: scale(0.5) translateX(-50%); 
-        transform-origin: top left;
-
-        /* 2. Arreglo de "Things" cortado */
-        /* Forzamos una altura menor para que el modelo suba y el texto no se corte */
-        height: 140px !important; 
-        overflow: visible !important; /* Permite que el resplandor rojo se vea completo */
+        left: 0; /* Reseteamos el left que intentamos antes */
         
-        /* 3. Espaciado */
-        margin-top: 1.5rem !important;
-        margin-bottom: 0 !important; 
+        /* Centrado con márgenes automático */
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        /* Escalado desde el centro */
+        transform: scale(0.4) !important; /* Más pequeño para asegurar que quepa */
+        transform-origin: center top; /* Escalamos desde el centro superior */
+
+        /* Altura y Espaciado para que el modelo suba */
+        height: 100px !important; /* Altura muy baja para recortar el espacio vacío */
+        margin-top: -1rem !important; /* Subimos el logo un poco */
+        
+        /* Aseguramos que nada se corte */
+        overflow: visible !important;
+        width: 625px; /* Mantenemos su ancho original para que el scale funcione bien */
     }
 
-    /* Ajuste fino para las letras de abajo */
+    /* 3. Ajuste de 'Things' para que no se separe */
     .st-bottom {
-        top: -3rem !important; /* Ajustamos la posición de 'Things' para que no se separe */
+        top: -3.5rem !important; /* Juntamos 'Things' a 'Stranger' */
+        position: relative;
+    }
+    
+    .st-things-t {
+        letter-spacing: 1px !important; /* Reducimos el espaciado entre letras */
     }
 
+    /* 4. Ajuste del Modelo 3D */
     model-viewer {
-        /* 4. Subimos el modelo 3D */
-        /* Ahora que la altura de .st es pequeña, usamos un margen negativo suave */
-        margin: -2rem auto 0 auto !important; 
+        /* Subimos el modelo para que quede justo debajo del letrero */
+        margin-top: -5rem !important; /* Este valor sube el modelo. Ajusta si queda muy encima */
         height: 60vh !important;
         width: 100vw !important;
+        z-index: 1;
+    }
+}
+
+/* Ajuste extra para pantallas muy pequeñas (iPhone SE, etc) */
+@media (max-width: 380px) {
+    .st {
+        transform: scale(0.35) !important; /* Aún más pequeño */
+        height: 80px !important;
+        margin-top: -1.5rem !important;
+    }
+    
+    model-viewer {
+        margin-top: -6rem !important;
     }
 }
