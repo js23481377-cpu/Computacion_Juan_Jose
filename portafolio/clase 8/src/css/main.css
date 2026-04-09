@@ -337,9 +337,9 @@ model-viewer {
 @media (max-width: 650px) {
     .st {
         /* Esto escala TODO el logo para que quepa en el ancho del celular */
-        transform: scale(0.7); 
+        transform: scale(0.4); 
         transform-origin: center top;
-        margin-bottom: -110px; /* Evita que el modelo 3D suba demasiado */
+        /*margin-bottom: -110px; /* Evita que el modelo 3D suba demasiado */
         margin-top: 1rem;
     }
 
