@@ -333,70 +333,27 @@ model-viewer {
     background-color: #5d3fd3 !important; /* Morado del botón Sign Up */
     border: none;
 }
-/* --- ARREGLO PARA MÓVILES (Reemplaza tu sección @media anterior) --- */
-
+/* --- ARREGLO PARA MÓVILES --- */
 @media (max-width: 650px) {
-    /* Ajustes generales del cuerpo para móviles */
-    body {
-        /* Aseguramos que nada se corte lateralmente */
-        overflow-x: hidden;
-    }
-
-    /* 1. Ajuste del Contenedor del Título */
     .st {
-        /* Encogemos el logo al 50% */
+        /* Esto escala TODO el logo para que quepa en el ancho del celular */
         transform: scale(0.5); 
         transform-origin: center top;
-
-        /* --- LA CLAVE --- */
-        /* Reducimos drásticamente la altura para eliminar el espacio vacío inferior 
-           que empuja el modelo hacia abajo. */
-        height: 120px !important; 
-
-        /* Margen negativo para subir un poco el logo y que no quede mucho espacio arriba */
-        margin-top: -1rem !important;
-        
-        /* Aseguramos que nada de este bloque se corte visualmente */
-        overflow: visible !important;
+        margin-bottom: -150px; /* Evita que el modelo 3D suba demasiado */
+        margin-top: 1rem;
     }
 
-    /* 2. Ajuste fino de la palabra 'Things' y líneas en móviles */
-    .st-things-t {
-        /* Hacemos 'Things' un poquito más pequeño para que encaje mejor con las líneas */
-        font-size: 90% !important;
-        letter-spacing: 1px !important;
-    }
-    
-    .st-bound-mini {
-        /* Subimos un poquito las líneas cortas para que toquen 'Things' */
-        top: -0.2rem !important;
-    }
-
-    /* 3. Ajuste del Modelo 3D */
     model-viewer {
-        /* Mantenemos el margen negativo original o lo ajustamos según prefieras.
-           -8rem o -6rem debería funcionar bien ahora que .st tiene menos altura. */
-        margin-top: -6rem !important; 
-        
-        /* Ajustamos la altura del modelo en móvil para que quepa todo */
-        height: 55vh !important; 
-        width: 100vw !important;
+        /* Bajamos el modelo para que no tape el título en celulares */
+        margin-top: 2rem !important; 
+        height: 50vh;
     }
 }
 
 /* Ajuste extra para pantallas muy pequeñas (iPhone SE, etc) */
 @media (max-width: 380px) {
     .st {
-        /* Escalamos un poco más para pantallas muy estrechas */
-        transform: scale(0.42);
-        
-        /* Ajustamos la altura y márgenes proporcionales */
-        height: 100px !important;
-        margin-top: -1.5rem !important;
-    }
-    
-    model-viewer {
-        /* Subimos el modelo un poco más */
-        margin-top: -6.5rem !important;
+        transform: scale(0.4);
+        margin-bottom: -180px;
     }
 }
