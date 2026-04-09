@@ -286,7 +286,6 @@ model-viewer {
     outline: 1px solid #4285f4;
   }
 
-  /* Esto asegura que el logo no se rompa y mantenga tu diseño exacto */
 .st-wrapper {
     width: 100%;
     display: flex;
@@ -297,25 +296,23 @@ model-viewer {
 
 @media (max-width: 650px) {
     .st {
-        /* Escalamos el logo completo proporcionalmente */
         transform: scale(0.7); 
-        margin-top: -2rem; /* Ajuste para compensar el espacio del escalado */
+        margin-top: -2rem; 
         margin-bottom: -4rem;
     }
 }
 
 @media (max-width: 450px) {
     .st {
-        transform: scale(0.5); /* Más pequeño para celulares */
+        transform: scale(0.5); 
         margin-top: -5rem;
         margin-bottom: -8rem;
     }
 }
 
-/* --- ESTILOS PARA LA NAVBAR --- */
+/* ---  NAVBAR --- */
 .custom-navbar {
-    background-color: #2b0071 !important; /* El color morado oscuro de la foto */
-    padding: 0.5rem 1rem;
+    background-color: #2b0071 !important; 
 }
 
 .custom-navbar .navbar-brand, 
@@ -330,27 +327,24 @@ model-viewer {
 }
 
 .btn-secondary {
-    background-color: #5d3fd3 !important; /* Morado del botón Sign Up */
+    background-color: #5d3fd3 !important;
     border: none;
 }
-/* --- ARREGLO PARA MÓVILES --- */
+/* --- ARREGLO PARA CELULAR --- */
 @media (max-width: 650px) {
     .st {
-        /* Esto escala TODO el logo para que quepa en el ancho del celular */
+        /* ESCALA DE LOGO */
         transform: scale(0.4); 
         transform-origin: center top;
-        /*margin-bottom: -110px; /* Evita que el modelo 3D suba demasiado */
         margin-top: 1rem;
     }
 
     model-viewer {
-        /* Bajamos el modelo para que no tape el título en celulares */
         margin-top: -5rem !important; 
         height: 50vh;
     }
 }
 
-/* Ajuste extra para pantallas muy pequeñas (iPhone SE, etc) */
 @media (max-width: 390px) {
     .st {
         transform: scale(0.4);
