@@ -336,24 +336,33 @@ model-viewer {
 /* --- ARREGLO PARA MÓVILES --- */
 @media (max-width: 650px) {
     .st {
-        /* Esto escala TODO el logo para que quepa en el ancho del celular */
-        transform: scale(0.5); 
-        transform-origin: center top;
-        margin-bottom: -150px; /* Evita que el modelo 3D suba demasiado */
-        margin-top: 1rem;
+        /* 1. Centrado y Escalado */
+        position: relative;
+        left: 50%;
+        /* Escalamos y centramos en una sola línea */
+        transform: scale(0.5) translateX(-50%); 
+        transform-origin: top left;
+
+        /* 2. Arreglo de "Things" cortado */
+        /* Forzamos una altura menor para que el modelo suba y el texto no se corte */
+        height: 140px !important; 
+        overflow: visible !important; /* Permite que el resplandor rojo se vea completo */
+        
+        /* 3. Espaciado */
+        margin-top: 1.5rem !important;
+        margin-bottom: 0 !important; 
+    }
+
+    /* Ajuste fino para las letras de abajo */
+    .st-bottom {
+        top: -3rem !important; /* Ajustamos la posición de 'Things' para que no se separe */
     }
 
     model-viewer {
-        /* Bajamos el modelo para que no tape el título en celulares */
-        margin-top: 2rem !important; 
-        height: 50vh;
-    }
-}
-
-/* Ajuste extra para pantallas muy pequeñas (iPhone SE, etc) */
-@media (max-width: 380px) {
-    .st {
-        transform: scale(0.4);
-        margin-bottom: -180px;
+        /* 4. Subimos el modelo 3D */
+        /* Ahora que la altura de .st es pequeña, usamos un margen negativo suave */
+        margin: -2rem auto 0 auto !important; 
+        height: 60vh !important;
+        width: 100vw !important;
     }
 }
