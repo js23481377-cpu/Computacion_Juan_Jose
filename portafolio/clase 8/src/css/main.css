@@ -345,7 +345,7 @@ model-viewer {
 
     model-viewer {
         /* Bajamos el modelo para que no tape el título en celulares */
-        margin-top: 1rem !important; 
+        margin-top: -5rem !important; 
         height: 50vh;
     }
 }
