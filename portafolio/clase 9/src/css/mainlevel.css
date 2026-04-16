@@ -1,0 +1,88 @@
+
+html, /* Asegura que el body sea transparente para ver el .bg */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent !important; /* Vital para ver el fondo */
+    overflow: hidden;
+}
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #050000; /* Un negro muy leve para que el rojo resalte */
+    z-index: -2; /* Enviado al fondo total */
+}
+
+.bg::before {
+    content: "";
+    position: absolute;
+    /* Hacemos que la capa sea más grande que la pantalla para que tenga margen de movimiento */
+    inset: -20%; 
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    filter: invert(1); 
+    opacity: 0.4;
+    
+    /* Asegúrate de que el nombre coincida con el @keyframes de abajo */
+    animation: ceniza-flotante 15s ease-in-out infinite; 
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Animación de movimiento errático */
+@keyframes ceniza-flotante {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(2%, 3%) rotate(1deg);
+    }
+    66% {
+        transform: translate(-2%, 1%) rotate(-1deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* El Rayo Rojo */
+.bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, #ff0000 0%, #630100 100%);
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    animation: rayo-rojo 5s steps(1) infinite; /* Más frecuente: cada 5 seg */
+}
+
+@keyframes rayo-rojo {
+    0%, 90%, 93%, 96%, 100% { opacity: 0; }
+    91% { opacity: 0.8; }
+    94% { opacity: 0.4; }
+    95% { opacity: 1; }
+}
+/* --- CONTENEDOR THREE.JS --- */
+#container-3d {
+    width: 100vw;
+    height: calc(100vh - 60px); /* Ajuste para que no tape la navbar */
+    position: relative;
+    z-index: 5;
+}
+
+/* --- NAVBAR --- */
+.custom-navbar {
+    background-color: #2b0071 !important;
+    padding: 0.5rem 2rem;
+    z-index: 1000;
+    position: relative;
+}
+
+.custom-navbar .navbar-brand, .custom-navbar .nav-link {
+    color: white !important;
+}
+
