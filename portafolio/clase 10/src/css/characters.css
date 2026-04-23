@@ -1,0 +1,81 @@
+.selection-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 25px #8b0000;
+    backdrop-filter: blur(5px);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.character-preview img {
+    height: 350px;
+    filter: drop-shadow(0 0 15px #ff0000); /* Brillo al personaje */
+}
+
+.character-info {
+    width: 45%;
+    color: white;
+    text-align: center;
+}
+
+.character-info h2 {
+    color: #ff0000;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.character-info p {
+    line-height: 1.6;
+    height: 100px; /* Para que no se mueva el diseño al cambiar texto */
+}
+
+/* Botones de navegación (flechitas) */
+.selection-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.btn-nav {
+    background: none;
+    border: 2px solid #ff0000;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-select {
+    background: #ff0000;
+    border: none;
+    color: black;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.btn-select:hover {
+    box-shadow: 0 0 20px #ff0000;
+    transform: scale(1.05);
+}
+
+.btn-back {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+}

@@ -1,0 +1,377 @@
+html { height: 100%; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #ddd;
+    transition: color 0.2s ease-in;
+}
+
+a:hover { color: #fff; }
+
+/* --- NAVBAR PERSONALIZADA --- */
+.custom-navbar {
+    background-color: #2b0071 !important; /* El morado de la imagen */
+    padding: 0.8rem 2rem;
+}
+
+.custom-navbar .navbar-brand, 
+.custom-navbar .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #440968 !important; /* Un toque rojo al pasar el mouse */
+}
+
+.btn-outline-secondary {
+    color: white !important;
+    border-color: white !important;
+}
+
+.btn-secondary {
+    background-color: #6f42c1 !important; /* Morado claro para el Sign Up */
+    border: none;
+}
+
+
+/* Tu contenedor principal */
+.bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000; /* Negro total */
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Partículas/Mugre: Ahora más grandes y visibles */
+.bg::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* Usamos un patrón de ruido más pesado para que parezca suciedad real */
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  filter: invert(0.8); /* Hace que la mugre sea gris claro para que resalte en el negro */
+  opacity: 0.6;        /* Opacidad alta para que NO se pierda */
+  background-size: 900px; /* Tamaño de la textura más grande */
+  animation: ceniza-flotante 15s linear infinite;
+  pointer-events: none;
+}
+
+/* El Rayo Rojo: Efecto de flash violento */
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #530303; /* Rojo puro */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: rayo-rojo 8s steps(1) infinite;
+}
+
+/* Animación de la mugre: Movimiento errático lento */
+@keyframes ceniza-flotante {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-2%, -4%) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Animación del rayo: Triple parpadeo rápido */
+@keyframes rayo-rojo {
+  0%, 92%, 95%, 98%, 100% { opacity: 0; }
+  93% { opacity: 0.7; } /* Primer golpe */
+  94% { opacity: 0.2; }
+  96% { opacity: 0.9; } /* Segundo golpe fuerte */
+  97% { opacity: 0.3; }
+  99% { opacity: 1; }   /* Tercer golpe final */
+}
+
+/* Movimiento lento de las cenizas */
+@keyframes dust-float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-1%, -3%) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Animación de relámpago rojo aleatorio */
+@keyframes lightning-red {
+  0%, 94%, 96%, 100% { opacity: 0; }
+  95% { opacity: 0.6; } /* Destello principal */
+  97% { opacity: 0.3; } /* Eco del relámpago */
+}
+
+
+.bg2 { animation-direction: alternate-reverse; animation-duration: 4s; }
+.bg3 { animation-duration: 5s; }
+
+@keyframes slide {
+    0%   { transform: translateX(-25%); }
+    100% { transform: translateX(25%); }
+}
+
+
+/* --- CONTENEDOR DEL TÍTULO: Eliminamos espacios --- */
+.st {
+    width: 625px;
+    /* Quitamos casi todo el margen inferior */
+    margin: 2rem auto 0 auto; 
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 8rem;
+    font-family: 'ITC Benguiat W01';
+    font-weight: 800;
+    color: #1c0502;
+    text-shadow: -0.05rem -0.05rem 1px #ed2b12,
+        0.05rem -0.05rem 1px #ed2b12,
+        -0.05rem 0.05rem 1px #ed2b12,
+        0.05rem 0.05rem 1px #ed2b12,
+        0 0 15px #630100,
+        0 0 20px #450100;
+    letter-spacing: -2px;
+    height: 280px; /* Forzamos una altura para que el modelo sepa dónde empezar */
+}
+
+.st p {
+    display: inline-block;
+    margin: 0;
+}
+
+/* --- LÍNEAS ROJAS --- */
+.st-bound {
+    box-shadow: -0.05rem -0.05rem 2px #ed2b12,
+        0.05rem -0.05rem 2px #ed2b12,
+        -0.05rem 0.05rem 2px #ed2b12,
+        0.05rem 0.05rem 2px #ed2b12;
+    height: 5px;
+}
+
+.st-bound-full {
+    width: 100%;
+    margin: auto;
+    margin-bottom: -1.2rem;
+    max-width: 612px;
+    margin-left: 5px;
+}
+
+.st-bound-mini {
+    margin-top: 0.5rem;
+}
+
+.st-bound-left {
+    float: left;
+    width: 99px;
+    position: relative;
+    left: 5px;
+}
+
+.st-bound-right {
+    float: right;
+    width: 103px;
+    left: 0.3rem;
+    position: relative;
+}
+
+/* --- POSICIONAMIENTO DE LETRAS --- */
+.st-bottom {
+    clear: both;
+    top: -3.75rem; /* Este valor negativo crea el espacio vacío abajo, por eso el modelo sube con -8rem */
+    position: relative;
+    left: .6rem;
+    letter-spacing: 2px;
+}
+
+.st-drop {
+    line-height: 0;
+    position: relative;
+    top: 1.55rem;
+}
+
+.st-stranger-s {
+    font-size: 10.5rem;
+    letter-spacing: -8px;
+}
+
+.st-stranger-t {
+    letter-spacing: 0;
+}
+
+.st-stranger-n {
+    letter-spacing: -5px;
+}
+
+.st-stranger-g {
+    letter-spacing: 0;
+}
+
+.st-stranger-r-2 {
+    font-size: 10.5rem;
+    right: 0.2rem;
+}
+
+.st-things-t {
+    font-size: 104%;
+    letter-spacing: 2px;
+}
+
+.st-things-n {
+    letter-spacing: -5px;
+}
+
+.st-things-g {
+    letter-spacing: -3px;
+}
+
+
+/* Contenedor de las opciones (Play, Characters, etc.) */
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* AJUSTE DE POSICIÓN: Con esto lo subes */
+    /* Si necesitas que suba más, aumenta el número (ej: -250px) */
+    margin-top: -200px; 
+    
+    /* Ajustamos el alto para que no empuje el contenido hacia abajo */
+    height: 85vh; 
+    position: relative;
+    z-index: 10;
+}
+
+/* Estilo de la lista de opciones */
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Estilo de cada palabra (Play, Characters, etc.) */
+.main-menu ul li {
+    /* AJUSTE DE TAMAÑO: Aquí lo haces más grande */
+    font-size: 2.2rem; 
+    
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 20px 0; /* Espacio entre cada opción */
+    cursor: pointer;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    
+    /* Un ligero sombreado para que se lea mejor sobre la "mugre" */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.main-menu ul li:hover {
+    color: #ff0000; /* Cambia a rojo Stranger Things */
+    transform: scale(1.2); /* Se agranda un poco más */
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #8b0000;
+}
+
+
+/* La ventanita de volumen en la nueva pestaña */
+.settings-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: rgba(0, 0, 0, 0.8); /* Transparencia */
+    border: 2px solid #ff0000;
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 0 20px #8b0000;
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 100;
+}
+
+.settings-box h3 {
+    color: #ff0000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* El botón para volver */
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: 1px solid #333;
+    padding: 5px 15px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    color: white;
+    border-color: #ff0000;
+}
+/* 1. Quitamos el diseño original del navegador */
+.vol-slider {
+    -webkit-appearance: none;  /* Quita el azul en Chrome/Edge/Safari */
+    appearance: none;
+    width: 100%;
+    height: 8px;               /* Grosor de la línea */
+    background: #222;          /* Color de la barra (fondo) */
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #444;    /* Un borde sutil */
+}
+
+/* 2. Personalizamos el "botoncito" que arrastras (Chrome, Edge, Safari) */
+.vol-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #640707;       /* Rojo Stranger Things */
+    cursor: pointer;
+    border-radius: 50%;        /* Lo hace redondo */
+    box-shadow: 0 0 10px #ff0000; /* Brillo neón rojo */
+    border: none;
+}
+
+/* 3. Personalizamos el "botoncito" para Firefox */
+.vol-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff0000;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff0000;
+    border: none;
+}
+
+/* 4. Efecto cuando pasas el mouse por encima del botoncito */
+.vol-slider::-webkit-slider-thumb:hover {
+    background: #ff3333;
+    transform: scale(1.2);    /* Se agranda un poco */
+    transition: 0.2s;
+}

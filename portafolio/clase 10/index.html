@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computacion Grafica</title>
+
+    <link rel="icon" type="image/png" href="../../src/img/USB_Cali_Logo.svg.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+
+<body>
+    <section id="navbar">
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+                    <img src="../../src/img/USB_Cali_Logo.svg.png" alt="Logo" width="40" class="me-2">
+                    Universidad San buenaventura Cali
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                      <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Tema</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Curiosidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Apoyo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Compañeros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Actividades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Soporte</a></li>
+                    </ul>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-secondary">Log in</a>
+                        <a href="#" class="btn btn-secondary">Sign up</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+    </div>
+
+
+    <div class="st-wrapper">
+    <div class="st">
+        <div class="st-top">
+            <div class="st-bound st-bound-full"></div>
+            <p><span class="st-drop st-stranger-s">S</span><span class="st-stranger-t">t</span><span
+                    class="st-stranger-r">r</span><span class="st-stranger-a">a</span><span
+                    class="st-stranger-n">n</span><span class="st-stranger-g">g</span><span
+                    class="st-stranger-e">e</span><span class="st-drop st-stranger-r-2">r</span>
+            </p>
+            <div class="st-bound st-bound-mini st-bound-left"></div>
+            <div class="st-bound st-bound-mini st-bound-right"></div>
+        </div>
+        <div class="st-bottom">
+            <p><span class="st-things-t">T</span><span class="st-things-h">h</span><span
+                    class="st-things-i">i</span><span class="st-things-n">n</span><span
+                    class="st-things-g">g</span><span class="st-things-s">s</span></p>
+        </div>
+    </div>
+
+    <div class="main-menu">
+        <ul class="main-menu__nav">
+            <li><a href="./viewer/level1.html" data-title="Play" id="play">Play</a></li>
+            <li><a href="./Viewer/characters.html" data-title="Characters">Characters</a></li>
+            <li><a href="./Viewer/settings.html" data-title="Settings">Settings</a></li>
+            <li><a href="#" data-title="Options">Exit</a></li>
+        </ul>
+    </div>
+
+    <audio loop autoplay id="myAudio">
+        <source src="./src/sounds/intro.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="./src/js/main.js"></script>
+
+</body>
+
+</html>
